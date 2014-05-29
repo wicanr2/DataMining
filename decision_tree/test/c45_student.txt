@@ -1,0 +1,400 @@
+WJY decision tree C4.5 algorithm
+Decison Category
+buys_computer range: yes,no,
+category
+age range: 31...40,>40,<=30,
+income range: high,low,medium,
+student range: yes,no,
+credit_rating range: excellent,fair,
+record
+<=30 high no fair no 
+
+<=30 high no excellent no 
+
+31...40 high no fair yes 
+
+>40 medium no fair yes 
+
+>40 low yes fair yes 
+
+>40 low yes excellent no 
+
+31...40 low yes excellent yes 
+
+<=30 medium no fair no 
+
+<=30 low yes fair yes 
+
+>40 medium yes fair yes 
+
+<=30 medium yes excellent yes 
+
+31...40 medium no excellent yes 
+
+31...40 high yes fair yes 
+
+>40 medium no excellent no 
+
++++++++++++Record List+++++++++++++++
+[<=30 high no fair no 
+, <=30 high no excellent no 
+, 31...40 high no fair yes 
+, >40 medium no fair yes 
+, >40 low yes fair yes 
+, >40 low yes excellent no 
+, 31...40 low yes excellent yes 
+, <=30 medium no fair no 
+, <=30 low yes fair yes 
+, >40 medium yes fair yes 
+, <=30 medium yes excellent yes 
+, 31...40 medium no excellent yes 
+, 31...40 high yes fair yes 
+, >40 medium no excellent no 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+age	p0	p1	info	
+31...40	4	0	0.0	
+>40	3	2	0.3467680694480959	
+<=30	2	3	0.3467680694480959	
+--------------end-----------------------
+-----------information entropy----------
+
+income	p0	p1	info	
+high	2	2	0.2857142857142857	
+low	3	1	0.23179374984546652	
+medium	4	2	0.39355535745192405	
+--------------end-----------------------
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	6	1	0.29583638929116374	
+no	3	4	0.4926140680171258	
+--------------end-----------------------
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	3	3	0.42857142857142855	
+fair	6	2	0.46358749969093305	
+--------------end-----------------------
+-----------information detail----------
+age gain=0.2467498197744391 total_info=0.9402859586706309 entropy=0.6935361388961918 gain_ratio=0.3557850931418767 
+income gain=0.029222565658954647 total_info=0.9402859586706309 entropy=0.9110633930116763 gain_ratio=0.032075227567155834 
+student gain=0.15183550136234136 total_info=0.9402859586706309 entropy=0.7884504573082896 gain_ratio=0.19257456185731228 
+credit_rating gain=0.04812703040826927 total_info=0.9402859586706309 entropy=0.8921589282623617 gain_ratio=0.05394445864259323 
+--------------end----------------------
+[31...40 high no fair yes 
+, 31...40 low yes excellent yes 
+, 31...40 medium no excellent yes 
+, 31...40 high yes fair yes 
+]
+[>40 medium no fair yes 
+, >40 low yes fair yes 
+, >40 low yes excellent no 
+, >40 medium yes fair yes 
+, >40 medium no excellent no 
+]
+[<=30 high no fair no 
+, <=30 high no excellent no 
+, <=30 medium no fair no 
+, <=30 low yes fair yes 
+, <=30 medium yes excellent yes 
+]
++++++++++++Record List+++++++++++++++
+[31...40 high no fair yes 
+, 31...40 low yes excellent yes 
+, 31...40 medium no excellent yes 
+, 31...40 high yes fair yes 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+income	p0	p1	info	
+high	2	0	0.0	
+low	1	0	0.0	
+medium	1	0	0.0	
+--------------end-----------------------
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	2	0	0.0	
+no	2	0	0.0	
+--------------end-----------------------
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	2	0	0.0	
+fair	2	0	0.0	
+--------------end-----------------------
+-----------information detail----------
+income gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+student gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+credit_rating gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+--------------end----------------------
+[31...40 high no fair yes 
+, 31...40 high yes fair yes 
+]
+[31...40 low yes excellent yes 
+]
+[31...40 medium no excellent yes 
+]
++++++++++++Record List+++++++++++++++
+[>40 medium no fair yes 
+, >40 low yes fair yes 
+, >40 low yes excellent no 
+, >40 medium yes fair yes 
+, >40 medium no excellent no 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+income	p0	p1	info	
+high	0	0	0.0	
+low	1	1	0.4	
+medium	2	1	0.5509775004326938	
+--------------end-----------------------
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	2	1	0.5509775004326938	
+no	1	1	0.4	
+--------------end-----------------------
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	0	2	0.0	
+fair	3	0	0.0	
+--------------end-----------------------
+-----------information detail----------
+income gain=0.01997309402197478 total_info=0.9709505944546686 entropy=0.9509775004326938 gain_ratio=0.021002698815573494 
+student gain=0.01997309402197478 total_info=0.9709505944546686 entropy=0.9509775004326938 gain_ratio=0.021002698815573494 
+credit_rating gain=0.9709505944546686 total_info=0.9709505944546686 entropy=0.0 gain_ratio=0.9709505944546686 
+--------------end----------------------
+[>40 low yes excellent no 
+, >40 medium no excellent no 
+]
+[>40 medium no fair yes 
+, >40 low yes fair yes 
+, >40 medium yes fair yes 
+]
++++++++++++Record List+++++++++++++++
+[>40 low yes excellent no 
+, >40 medium no excellent no 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+income	p0	p1	info	
+high	0	0	0.0	
+low	0	1	0.0	
+medium	0	1	0.0	
+--------------end-----------------------
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	0	1	0.0	
+no	0	1	0.0	
+--------------end-----------------------
+-----------information detail----------
+income gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+student gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+--------------end----------------------
+[>40 low yes excellent no 
+]
+[>40 medium no excellent no 
+]
++++++++++++Record List+++++++++++++++
+[>40 medium no fair yes 
+, >40 low yes fair yes 
+, >40 medium yes fair yes 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+income	p0	p1	info	
+high	0	0	0.0	
+low	1	0	0.0	
+medium	2	0	0.0	
+--------------end-----------------------
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	2	0	0.0	
+no	1	0	0.0	
+--------------end-----------------------
+-----------information detail----------
+income gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+student gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+--------------end----------------------
+[>40 low yes fair yes 
+]
+[>40 medium no fair yes 
+, >40 medium yes fair yes 
+]
++++++++++++Record List+++++++++++++++
+[<=30 high no fair no 
+, <=30 high no excellent no 
+, <=30 medium no fair no 
+, <=30 low yes fair yes 
+, <=30 medium yes excellent yes 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+income	p0	p1	info	
+high	0	2	0.0	
+low	1	0	0.0	
+medium	1	1	0.4	
+--------------end-----------------------
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	2	0	0.0	
+no	0	3	0.0	
+--------------end-----------------------
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	1	1	0.4	
+fair	1	2	0.5509775004326938	
+--------------end-----------------------
+-----------information detail----------
+income gain=0.5709505944546686 total_info=0.9709505944546686 entropy=0.4 gain_ratio=1.4273764861366713 
+student gain=0.9709505944546686 total_info=0.9709505944546686 entropy=0.0 gain_ratio=0.9709505944546686 
+credit_rating gain=0.01997309402197478 total_info=0.9709505944546686 entropy=0.9509775004326938 gain_ratio=0.021002698815573494 
+--------------end----------------------
+[<=30 high no fair no 
+, <=30 high no excellent no 
+]
+[<=30 low yes fair yes 
+]
+[<=30 medium no fair no 
+, <=30 medium yes excellent yes 
+]
++++++++++++Record List+++++++++++++++
+[<=30 high no fair no 
+, <=30 high no excellent no 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	0	0	0.0	
+no	0	2	0.0	
+--------------end-----------------------
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	0	1	0.0	
+fair	0	1	0.0	
+--------------end-----------------------
+-----------information detail----------
+student gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+credit_rating gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+--------------end----------------------
+[<=30 high no fair no 
+, <=30 high no excellent no 
+]
++++++++++++Record List+++++++++++++++
+[<=30 low yes fair yes 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	1	0	0.0	
+no	0	0	0.0	
+--------------end-----------------------
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	0	0	0.0	
+fair	1	0	0.0	
+--------------end-----------------------
+-----------information detail----------
+student gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+credit_rating gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+--------------end----------------------
+[<=30 low yes fair yes 
+]
++++++++++++Record List+++++++++++++++
+[<=30 medium no fair no 
+, <=30 medium yes excellent yes 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+student	p0	p1	info	
+yes	1	0	0.0	
+no	0	1	0.0	
+--------------end-----------------------
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	1	0	0.0	
+fair	0	1	0.0	
+--------------end-----------------------
+-----------information detail----------
+student gain=1.0 total_info=1.0 entropy=0.0 gain_ratio=1.0 
+credit_rating gain=1.0 total_info=1.0 entropy=0.0 gain_ratio=1.0 
+--------------end----------------------
+[<=30 medium yes excellent yes 
+]
+[<=30 medium no fair no 
+]
++++++++++++Record List+++++++++++++++
+[<=30 medium yes excellent yes 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	1	0	0.0	
+fair	0	0	0.0	
+--------------end-----------------------
+-----------information detail----------
+credit_rating gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+--------------end----------------------
+[<=30 medium yes excellent yes 
+]
++++++++++++Record List+++++++++++++++
+[<=30 medium no fair no 
+]
++++++++++++End Record +++++++++++++++
+-----------information entropy----------
+
+credit_rating	p0	p1	info	
+excellent	0	0	0.0	
+fair	0	1	0.0	
+--------------end-----------------------
+-----------information detail----------
+credit_rating gain=0.0 total_info=0.0 entropy=0.0 gain_ratio=0.0 
+--------------end----------------------
+[<=30 medium no fair no 
+]
+------------------------------
+Decision Tree 
+age --> 
+   31...40 ==> 
+      yes
+   >40 ==> 
+      credit_rating --> 
+         excellent ==> 
+            no
+         fair ==> 
+            yes
+   <=30 ==> 
+      income --> 
+         high ==> 
+            no
+         low ==> 
+            yes
+         medium ==> 
+            student --> 
+               yes ==> 
+                  yes
+               no ==> 
+                  no
+
+------------------------------
